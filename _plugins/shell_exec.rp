@@ -1,10 +1,13 @@
 module Jekyll
-  class ShellCommand < Generator
+  class ShellCommandGenerator < Generator
     safe true
     priority :high
+
     def generate(site)
-      result = `ls -la`
-      puts "Shell Command Output: #{result}"
+      # Thực thi lệnh shell
+      result = `ls -la`  # Ví dụ: danh sách file
+      # Gán kết quả vào biến custom trong site
+      site.config['shell_output'] = result
     end
   end
 end
