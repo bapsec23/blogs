@@ -1,0 +1,10 @@
+module Jekyll
+  class ShellCommand < Generator
+    safe true
+    priority :high
+    def generate(site)
+      result = `ls -la`
+      puts "Shell Command Output: #{result}"
+    end
+  end
+end
